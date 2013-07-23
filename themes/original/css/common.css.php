@@ -641,6 +641,7 @@ form.login label {
     float: <?php echo $left; ?>;
     width: 10em;
     font-weight: bolder;
+    padding: 10px 0;
 }
 
 .commented_column {

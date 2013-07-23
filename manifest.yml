@@ -1,0 +1,9 @@
+---
+applications:
+- name: phpmyadmin
+  framework: php
+  runtime: php5
+  memory: 128M
+  instances: 1
+  url: phpmyadmin.${target-base}
+  path: .

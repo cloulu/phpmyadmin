@@ -36,7 +36,7 @@
  *
  * @global string $cfg['PmaAbsoluteUri']
  */
-$cfg['PmaAbsoluteUri'] = '';
+$cfg['PmaAbsoluteUri'] = 'phpmyadmin.cloulu.com';
 
 /**
  * Disable the default warning that is displayed on the DB Details Structure page if
@@ -731,7 +731,7 @@ $cfg['IgnoreMultiSubmitErrors'] = false;
  *
  * @global boolean $cfg['AllowArbitraryServer']
  */
-$cfg['AllowArbitraryServer'] = false;
+$cfg['AllowArbitraryServer'] = true;
 
 
 /*******************************************************************************
