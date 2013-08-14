@@ -173,23 +173,15 @@ class AuthenticationCookie extends AuthenticationPlugin
         )->display();
         echo "</noscript>\n";
 
-        echo "<div class='hide js-show'>";
-        // Displays the languages form
-        if (empty($GLOBALS['cfg']['Lang'])) {
-            include_once './libraries/display_select_lang.lib.php';
-            // use fieldset, don't show doc link
-            echo PMA_getLanguageSelectorHtml(true, false);
-        }
-        echo '</div>
-    <br />
+        echo '
     <!-- Login form -->
     <form method="post" action="index.php" name="login_form"' . $autocomplete .
             ' class="disableAjax login hide js-show">
         <fieldset>
         <legend>';
         echo __('Log in');
-        echo PMA_Util::showDocu('index');
         echo '</legend>';
+
         if ($GLOBALS['cfg']['AllowArbitraryServer']) {
             echo '
             <div class="item">
@@ -257,6 +249,15 @@ class AuthenticationCookie extends AuthenticationPlugin
         echo PMA_generate_common_hidden_inputs($_form_params, '', 0, 'server');
         echo '</fieldset>
     </form>';
+        
+        echo "<div class='hide js-show'>";
+        // Displays the languages form
+        if (empty($GLOBALS['cfg']['Lang'])) {
+            include_once './libraries/display_select_lang.lib.php';
+            // use fieldset, don't show doc link
+            echo PMA_getLanguageSelectorHtml(true, false);
+        }
+        echo '</div>';
 
         // BEGIN Swekey Integration
         Swekey_login('input_username', 'input_go');
