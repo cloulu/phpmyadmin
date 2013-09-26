@@ -7,3 +7,8 @@ applications:
   instances: 1
   url: mypma.${target-base}
   path: .
+  services:
+    mysql-pma:
+      vendor: mysql
+      version: '5.1'
+      tier: free
